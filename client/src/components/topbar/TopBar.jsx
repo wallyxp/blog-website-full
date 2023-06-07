@@ -1,10 +1,14 @@
 import "./topbar.css"
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from "react-router-dom"
-
+import { Context } from "../../context/Context";
 export default function TopBar() {
-    const usr = false;
+    const {user, dispatch} = useContext(Context);
+    // console.log(user);
 
+    const handleLogout = () =>{
+        dispatch({type: "LOGOUT"})
+    }
   return (
     <div className="top">
         <div className="topLeft">
@@ -27,12 +31,12 @@ export default function TopBar() {
                 <li className="topListItem">
                     <Link className="link" to='/write'>WRITE</Link>
                 </li>
-                { usr && <li className="topListItem">LOGOUT</li>}
+                { user && <li className="topListItem" onClick={handleLogout}>LOGOUT</li>}
             </ul>
         </div>
         <div className="topRight">
-            {usr ? (<Link className="link" to="/settings">
-                <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" className="topImage"/>
+            {user ? (<Link className="link" to="/settings">
+                {user.profilePic? <img src={user.profilePic} alt="" className="topImage"/>:<img src="https://static.vecteezy.com/system/resources/thumbnails/009/734/564/small/default-avatar-profile-icon-of-social-media-user-vector.jpg" alt="" className="topImage"/>}
             </Link>):( <ul className="topList">
 
                 <li className="topListItem">

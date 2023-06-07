@@ -5,6 +5,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 export default function SinglePost(){
+    const PF = "http://localhost:5000/images/"
     const location = useLocation()
     const path = location.pathname.split("/")[2];
     const [post, setPost] = useState({})
@@ -18,7 +19,7 @@ export default function SinglePost(){
     return(
         <div className="singlePost">
             <div className="singlePostWrapper">
-                {post.photo ? <img src={post.photo} alt="" className="singlePostImg"/>:<img src="https://img.freepik.com/premium-vector/forest-scenery-background-natural-mountains-lakes_621174-1509.jpg" alt="" className="singlePostImg"/>}
+                {post.photo ? <img src={PF + post.photo} alt="" className="singlePostImg"/>:<img src="https://img.freepik.com/premium-vector/forest-scenery-background-natural-mountains-lakes_621174-1509.jpg" alt="" className="singlePostImg"/>}
                 <h1 className="singlePostTitle">
                     {post.title}
                     <div className="singlePostEdit">
