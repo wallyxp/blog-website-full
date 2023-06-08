@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import { Context } from "../../context/Context";
 export default function TopBar() {
     const {user, dispatch} = useContext(Context);
+    const PF = "http://localhost:5000/images/"
     // console.log(user);
 
     const handleLogout = () =>{
@@ -36,7 +37,7 @@ export default function TopBar() {
         </div>
         <div className="topRight">
             {user ? (<Link className="link" to="/settings">
-                {user.profilePic? <img src={user.profilePic} alt="" className="topImage"/>:<img src="https://static.vecteezy.com/system/resources/thumbnails/009/734/564/small/default-avatar-profile-icon-of-social-media-user-vector.jpg" alt="" className="topImage"/>}
+                {user.profilePic? <img src={PF + user.profilePic} alt="" className="topImage"/>:<img src="https://static.vecteezy.com/system/resources/thumbnails/009/734/564/small/default-avatar-profile-icon-of-social-media-user-vector.jpg" alt="" className="topImage"/>}
             </Link>):( <ul className="topList">
 
                 <li className="topListItem">
