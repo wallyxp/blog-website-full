@@ -13,22 +13,30 @@ export default function TopBar() {
   return (
     <div className="top">
         <div className="topLeft">
-            <i className="fa-brands fa-facebook topIcon"></i>
-            <i className="fa-brands fa-square-instagram topIcon"></i>
-            <i className="fa-brands fa-twitter topIcon"></i>
-            <i className="fa-brands fa-pinterest topIcon"></i>
+            <a href={process.env.REACT_APP_FACEBOOK}>
+                <i className="fa-brands fa-facebook topIcon"></i>
+            </a>
+            <a href={process.env.REACT_APP_INSTA}>
+                <i className="fa-brands fa-square-instagram topIcon"></i>
+            </a>
+            <a href={process.env.REACT_APP_TWITTER}>
+               <i className="fa-brands fa-twitter topIcon"></i>
+            </a>
+            <a href={process.env.REACT_APP_PINTEREST}>                
+                <i className="fa-brands fa-pinterest topIcon"></i>
+            </a>
         </div>
         <div className="topCenter">
             <ul className="topList">
                 <li className="topListItem">
                     <Link className='link' to='/'>HOME</Link>
                 </li>
-                <li className="topListItem">
+                {/* <li className="topListItem">
                     ABOUT
                 </li>
                 <li className="topListItem">
                     CONTACT
-                </li>
+                </li> */}
                 <li className="topListItem">
                     <Link className="link" to='/write'>WRITE</Link>
                 </li>
@@ -48,7 +56,7 @@ export default function TopBar() {
                     </li>
             </ul> )
                     }
-            <i className="fa-solid fa-magnifying-glass topSearchIcon"></i>
+            {/* <i className="fa-solid fa-magnifying-glass topSearchIcon"></i> */}
 
         </div>
     </div>

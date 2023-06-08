@@ -5,10 +5,10 @@ export default function Header() {
   return (
     <div className='header'>
         <div className="headerTitles">
-          <span className='headerTitleSm'>React & Node</span>
-          <span className='headerTitleLg'>Blog</span>
+          {/* <span className='headerTitleSm'>{`( ͡° ͜ʖ ͡°)`}</span> */}
+          <span className='headerTitleLg'>The Enigma Express</span>
         </div>
-        <img src="https://images.unsplash.com/photo-1603486002664-a7319421e133?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE3fHx8ZW58MHx8fHx8&w=1000&q=80" alt="" className='headerImg'/>
+        <img src="https://wallpapers.com/images/hd/hd-black-aesthetic-trees-pvrs39atu3arkeln.jpg" alt="" className='headerImg'/>
     </div>
   )
 }

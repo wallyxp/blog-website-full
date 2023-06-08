@@ -45,7 +45,7 @@ export default function Settings() {
         <div className="settingWrapper">
             <div className="settingsTitle">
                 <span className='settingsUpdateTitle'>Update Your Account</span>
-                <span className='settingsDeleteTitle'>Delete Account</span>
+                {/* <span className='settingsDeleteTitle'>Delete Account</span> */}
             </div>
             <form action="" className="settingsForm" onSubmit={handleSubmit}>
               <label >Profile Picture</label>
@@ -68,7 +68,7 @@ export default function Settings() {
               {success && <span style={{color:'green'}}> Profile has been updated</span>}
             </form>
         </div>
-        <SIdebar/>
+        {/* <SIdebar/> */}
     </div>
   )
 }
